@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color: #b9385f;
+        }
+        .clock {
+            background-color: #959292;
+            height: 350px;
+            width: 350px;
+            position: relative;
+            border-radius: 50%;
+            border: 5px solid darkgray;
+            box-shadow: 0 0 1px darkgray;
+        }
+        img{
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            top: 60px;
+            z-index: 2;
+        }
+        .numbers div{
+             position: absolute;
+             font-size: 27px;
+             font-weight: bold;
+             color: lightgoldenrodyellow;
+             text-shadow: 1px 1px  2px rgba(0,0,.7);
+        }
+        .twelve{
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .three{
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .six{
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .nine{
+            left: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .arrows{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .arrows::before{
+            content: " ";
+            width: 25px;
+            height: 25px;
+            background-color: #575454;
+            border-radius: 50%;
+            z-index: 4;
+        }
+        .arrows div{
+            background-color: white;
+            width: 7px;
+            position: absolute;
+            height: 120px;
+            transform-origin: bottom center;
+            bottom: 50%;
+            z-index: 4;
+            border-radius: 50% 50% 0 0;
+            box-shadow:1px 1px  2px rgba(0,0,.7) ;
+        }
+        .arrows .hour{
+            height: 80px;
+            transform: rotate(60deg);
+        }
+        .arrows .seconds{
+            transform: rotate(250deg);
+            background-color: goldenrod;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="numbers">
+        <div class="twelve">12</div>
+        <div class="three">3</div>
+        <div class="six">6</div>
+        <div class="nine">9</div>
+    </div>
+    <div class="arrows">
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="seconds"></div>
+    </div>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.8FrIffi9uErzAlbS_r7SgAHaDt?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
