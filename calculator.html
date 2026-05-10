@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator UI</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+<div class="container">
+    <div class="calculator">
+        <input type="text" class="display" placeholder="">
+        <div class="buttons">
+
+            <button class="operator" onclick="ADD()">+</button>
+            <button class="operator" onclick="SUBS()">-</button>
+            <button class="operator" onclick="MUL()">x</button>
+            <button class="operator" onclick="DIV()">%</button>
+
+            <button class="number" onclick="handleoperator('7')">7</button>
+            <button class="number" onclick="handleoperator('8')">8</button>
+            <button class="number" onclick="handleoperator('9')">9</button>
+            <button class="number" onclick="handleoperator('4')">4</button>
+
+            <button class="number" onclick="handleoperator('5')">5</button>
+            <button class="number" onclick="handleoperator('6')">6</button>
+            <button class="number" onclick="handleoperator('1')">1</button>
+            <button class="number" onclick="handleoperator('2')">2</button>
+
+            <button class="number" onclick="handleoperator('3')">3</button>
+            <button class="number" onclick="handleoperator('0')">0</button>
+            <button class="number" onclick="handleoperator('.')">.</button>
+            <button class="clear"  onclick="handleoperator('C')">C</button>
+            
+            <button class="equal" onclick="handleoperator('=')">=</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ADD() {
+        let a = Number(prompt("Enter a:"));
+        let b = Number(prompt("Enter b:"));
+        alert(`Addition of ${a} and ${b} is: ${a + b}`);
+    }
+
+    function SUBS(){
+        let a = Number(prompt("Enter a :"))
+        let b = Number(prompt("Enter b :"))
+        alert(`Substraction of ${a} and ${b} is: ${a-b}`)
+    }
+
+    function MUL(){
+        let a = Number(prompt("Enter a :"))
+        let b = Number(prompt("Enter b :"))
+        alert(`Multiplication of ${a} and ${b} is: ${a*b}`)
+    }
+
+    function DIV(){
+        let a = Number(prompt("Enter a :"))
+        let b = Number(prompt("Enter b :"))
+        alert(`Division of ${a} and ${b} is: ${a/b}`)
+    }
+</script>
+</body>
+</html>
