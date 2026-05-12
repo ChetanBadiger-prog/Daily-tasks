@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="output"></h2>
+    <script>
+ 
+    let username = "admin";
+    let password = "1234";
+    let role;
+
+if (username === "admin" && password === "1234") {
+    role = "admin";
+} else {
+    role = "guest";
+}
+
+let message;
+
+switch(role) {
+    case "admin":
+        message = "Welcome Admin - Full Access";
+        break;
+    case "guest":
+        message = "Welcome Guest - Limited Access";
+        break;
+    default:
+        message = "Invalid user";
+}
+
+document.getElementById("output").innerHTML = message;
+
+    </script>
+</body>
+</html>

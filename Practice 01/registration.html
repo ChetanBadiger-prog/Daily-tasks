@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        #registration_card{
+            margin: 470px;
+            padding: 40px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+        #registration_card input,
+        #registration_card button{
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="registration_card">
+        <input type="text" placeholder="Enter Name"><br>
+        <input type="text" placeholder="Enter Email ID"><br>
+        <input type="password" placeholder="Enter Password"><br>
+        <input type="password" placeholder="Confirm Password" >
+        <button onclick="reg_click()" style="color: white; background-color: blue;">Sign UP</button>
+
+        <p>Already have an Account
+            <a href="login.html" onclick="login()">Login</a> </p>
+    </div>
+
+    <script>
+        function reg_click(){
+           const name = document.querySelector(`#registration_card input[placeholder="Enter Name"]`).value;
+           const email = document.querySelector(`#registration_card input[placeholder="Enter Email ID"]`).value;
+           const password = document.querySelector(`#registration_card input[placeholder="Enter Password"]`).value;
+           const confirmpassword = document.querySelector(`#registration_card input[placeholder="Confirm Password"]`).value;
+
+           if(!name || !email || !password || !confirmpassword){
+            alert("please fill in all the fields")
+            return
+           }
+           if(password != confirmpassword){
+            alert("Password do not match!")
+            return
+           }
+           const user = {
+            name : name,
+            email : email,
+            password : password
+           }
+           localStorage.setItem("user", JSON.stringify(user))
+
+           alert("Registration successfull! Redirecting to login")
+
+           window.location.href="login.html"
+        };
+        function login() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

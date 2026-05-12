@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // try{
+        //     let age =prompt("enter the age :")
+
+        //     if(age<0){
+        //         throw "Age cannot be negative"
+        //     }
+        //     console.log("valid child");
+            
+        // }catch(error){
+        //     console.log("error", error)
+        // }
+
+        const pin = "1234"
+        let balance = 1000
+
+        let attempts = 0
+        while(attempts <3){
+            let enteredpin = prompt("enter your pin :")
+            if (enteredpin===pin){
+                alert("pin accepted");
+                break;
+            }else{
+                alert("incorrect pin")
+                attempts++
+            }
+        }
+        
+    </script>
+</body>
+</html>
+
+
+
+// Simple ATM Simulation in JavaScript
+
+const PIN = "1234";
+let balance = 1000;
+
+// PIN verification loop (3 attempts)
+let attempts = 0;
+while (attempts < 3) {
+  let enteredPin = prompt("Enter your PIN:");
+  if (enteredPin === PIN) {
+    alert("PIN accepted!");
+    break;
+  } else {
+    alert("Incorrect PIN.");
+    attempts++;
+  }
+}
+if (attempts === 3) {
+  alert("Too many incorrect attempts. Card blocked.");
+} else {
+  // ATM menu loop
+  while (true) {
+    let choice = prompt(
+      "ATM Menu:\n1. Withdraw\n2. Deposit\n3. Balance\n4. Exit\nChoose an option:"
+    );
+
+    if (choice === "1") {
+      let amount = parseFloat(prompt("Enter amount to withdraw:"));
+      if (amount > balance) {
+        alert("Insufficient funds.");
+        continue; // skip back to menu
+      }
+      balance -= amount;
+      alert(`Withdrawn ${amount}. New balance: ${balance}`);
+
+    } else if (choice === "2") {
+      let amount = parseFloat(prompt("Enter amount to deposit:"));
+      balance += amount;
+      alert(`Deposited ${amount}. New balance: ${balance}`);
+
+    } else if (choice === "3") {
+      alert(`Your balance is: ${balance}`);
+
+    } else if (choice === "4") {
+      alert("Thank you for using the ATM.");
+      break; // exit loop
+    } else {
+      alert("Invalid choice. Please try again.");
+      continue; // go back to menu
+    }
+  }
+}

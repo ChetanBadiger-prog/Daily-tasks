@@ -1,0 +1,37 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+nav{
+display: flex;
+justify-content: space-between;
+padding: 15px;
+background-color: #333;
+color: white;
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
+}
+/* #product-list, #cart {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card{
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+button{
+  padding: 8px;
+  background: green;
+  color: white;
+  border: none;
+  corsor: pointer;
+} */

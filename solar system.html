@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://cdn.britannica.com/29/148329-050-269A9EFE/night-sky-Milky-Way-Galaxy.jpg);
+    background-size: cover;       
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+/* Solar system container */
+
+.solar-system{
+    position:relative;
+    width:900px;
+    height:900px;
+}
+
+/* Sun */
+ .sun{
+    position:absolute;
+    width:90px;
+    height:90px;
+    background: radial-gradient(circle, #ffd700, #ff8c00);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    box-shadow:
+        0 0 30px #ff8c00,
+        0 0 60px #ff4500,
+        0 0 90px #ff0000;
+}
+
+/* Orbit circle */
+ .orbit{
+    position:absolute;
+    border:1px dashed rgba(204, 24, 24, 0.3);
+    border-radius:50%;
+    animation: rotate linear infinite;
+}
+
+/* Planet */
+ .planet{
+    position:absolute;
+    top:-8px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:50%;
+    box-shadow:0 0 8px rgba(255,255,255,0.6);
+}
+
+/* Mercury */
+
+.mercury-orbit{
+    width:180px;
+    height:180px;
+    top: 360px;
+    left:360px;
+    animation-duration:5s;
+}
+
+.mercury{
+    width:16px;
+    height:16px;
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+/* Venus */
+
+.venus-orbit{
+    width:260px;
+    height:260px;
+    top:320px;
+    left:320px;
+    animation-duration:8s;
+}
+
+.venus{
+    width:18px;
+    height:18px;
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+/* Earth */
+
+.earth-orbit{
+    width:340px;
+    height:340px;
+    top:280px;
+    left:280px;
+    animation-duration:12s;
+}
+
+.earth{
+    width:30px;
+    height:30px;
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+/* Mars */
+
+.mars-orbit{
+    width:420px;
+    height:420px;
+    top:240px;
+    left:240px;
+    animation-duration:18s;
+}
+
+.mars{
+    width:18px;
+    height:18px;
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.jupiter-orbit{
+    width:520px;
+    height:520px;
+    top:190px;
+    left:190px;
+    animation-duration:24s;
+}
+
+.jupiter{
+    width:34px;
+    height:34px;
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.saturn-orbit{
+    width:620px;
+    height:620px;
+    top:140px;
+    left:140px;
+    animation-duration:30s;
+}
+
+.saturn{
+    width:30px;
+    height:30px;
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.uranus-orbit{
+    width:720px;
+    height:720px;
+    top:90px;
+    left:90px;
+    animation-duration:36s;
+}
+
+.uranus{
+    width:26px;
+    height:26px;
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.neptune-orbit{
+    width:820px;
+    height:820px;
+    top:40px;
+    left:40px;
+    animation-duration:40s;
+}
+
+.neptune{
+    width:26px;
+    height:26px;
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+/* Rotation Animation */
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+</style>
+<body>
+
+<div class="solar-system">
+
+    <div class="sun"></div>
+
+    <div class="orbit mercury-orbit">
+        <div class="planet mercury"></div>
+    </div>
+
+    <div class="orbit venus-orbit">
+        <div class="planet venus"></div>
+    </div>
+
+    <div class="orbit earth-orbit">
+        <div class="planet earth"></div>
+    </div>
+
+    <div class="orbit mars-orbit">
+        <div class="planet mars"></div>
+    </div>
+
+    <div class="orbit jupiter-orbit">
+    <div class="planet jupiter"></div>
+    </div>
+
+    <div class="orbit saturn-orbit">
+    <div class="planet saturn"></div>
+    </div>
+
+<div class="orbit uranus-orbit">
+    <div class="planet uranus"></div>
+</div>
+
+<div class="orbit neptune-orbit">
+    <div class="planet neptune"></div>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    nav{
+        height: 80px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent img{
+    width: 250px;
+    height: 200px;
+    object-fit: contain;
+}
+    .parent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 30px;
+    }
+    .child1,.child2,.child3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: solid black;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .input-field{
+        margin: 10px;
+        padding: 10px;
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    button{
+        margin: 10px;
+        border-radius: 5px;
+        width: 90px;
+        color: white;
+    }   
+</style>
+<body>
+    <nav>        
+        <img src="https://th.bing.com/th/id/OIP.qOkAbO51WbDE_JAYkR_UkgHaE8?w=244&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="" height="75" arrange-item="center">
+        </nav>
+        <div class="parent">
+            <div class="child1">
+                <img src="https://imgd.aeplcdn.com/642x336/n/cw/ec/50277/chetak-right-front-three-quarter-15.png?isig=0" alt=""><br>
+                <input id="kilometer1" type="number" class="input-field" placeholder="enter km"><br>
+                <button onclick="rapido()" style="background-color: black; color: white;">Book Now</button>
+            </div>
+            <div class="child2">
+                <img src="https://www.bing.com/th/id/OIP.DSiGb-gJfuyVbvYJgdHEOAHaHa?w=193&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt=""><br>
+                <input id="kilometer2" type="number" class="input-field" placeholder="enter km"><br>
+                <button onclick="auto()" style="background-color: black; color: white;">Book Now</button>
+            </div>
+            <div class="child3">
+                <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/201906/uber_self_driving_660_061319011744.jpg" alt=""><br>
+                <input id="kilometer3" type="text" class="input-field" placeholder="Enter KM"><br>
+                <button onclick="taxi()" style="background-color: black; color: white;">Book Now</button>
+            </div>
+        </div>  
+        
+        <script>
+            function rapido(){
+                let input = document.getElementById("kilometer1").value;
+                alert(`The rupees per kilometer ${input*10}`)
+            }
+
+            function auto(){
+                let input = document.getElementById("kilometer2").value;
+                alert(`The repees per kilometer ${input*10}`)
+            }
+
+            function taxi(){
+                let input = document.getElementById("kilometer3").value;
+                alert(`the rupees per kilometer ${input*10}`)
+            }
+        </script>
+</body>
+</html>

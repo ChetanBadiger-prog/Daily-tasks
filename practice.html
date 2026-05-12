@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Machine</title>
+    <style>
+        .atm{
+            width :300px;
+            margin: 50px auto;
+            padding: 20px;
+            background: gray;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0, 0,0.5);
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        .display{
+            background: whitesmoke;
+            color: black;
+            font-weight: bold;
+            height: 50px;
+            margin-bottom: 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }   
+        .keypad{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .keypad button{
+            padding: 15px;
+            font-size: 18px;
+            background: #666;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .keypad button:hover{
+            background: #888;
+        }
+        .actions{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .actions button{
+            padding: 10px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .actions button:hover{
+            background: #555 ;
+        }
+        .card-slot{
+            background: #222;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="atm">
+        <div class="display" id="display">Welcome! Please enter your pin</div>
+
+        <div class="keypad">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>0</button>
+            <button>Clear</button>
+            <button>Enter</button>
+        </div>
+
+        <div class="actions">
+            <button id="deposit">Deposit</button>
+            <button id="withdraw">Withdraw</button>
+            <button id="balance">Check Balance</button>
+        </div>
+
+        <div class="card-slot">
+            Insert Card Here
+        </div>
+    </div>
+    <script>
+        let enteredvalue = ""
+        let balance = 0
+        const correctpin = "1234"
+        let authenticated = false
+
+        const display = document.getElementById("display")
+        const buttons = document.querySelectorAll(".keypad button")
+
+        buttons.forEach(btn =>{
+            btn.addEventListener("click",() =>{
+                const value = btn.textContent;
+
+                if(value==="Clear"){
+                    enteredvalue = " "
+                    display.textContent = "Cleared. Enter Pin or Amount"
+                }else if(value === "Enter"){
+                    if(!authenticated){
+                        if(enteredvalue===correctpin){
+                            authenticated=true
+                            display.textContent="Pin Accepted , Choose action"
+                        }else{
+                            display.textContent="Incorrect Pin!"
+                        }
+                    }else{
+                        display.textContent=`Amount Entered : ${enteredvalue}`
+                    }
+                    enteredvalue=""
+                }else{
+                    enteredvalue +=value
+                    display.textContent=enteredvalue
+                }
+            })
+        })
+
+        // action buttons
+        document.getElementById("deposit").addEventListener("click",()=>{
+            if(!authenticated){
+                display.textContent="Enter PIN First!"
+                return
+            }
+            let amount = parseInt(enteredvalue)
+            if(amount>0 && amount<=balance){
+                balance -= amount
+                display.textContent=`Withdrawn : ${amount},balance :${balance}`
+            }else if(amount>balance){
+                display.textContent = "insufficient balance!"
+            }else{
+                display.textContent="invalid withdrawal amount"
+            }
+            enteredvalue=""
+        })
+        document.getElementById("balance").addEventListener("click",()=>{
+            if(!authenticated){
+                display.textContent="enter pin first!"
+                return
+            }
+            display.textContent=`your balance : ${balance}`
+        })
+    </script>
+</body>
+</html>
