@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+let password = 1234;
+let key1 = Number(prompt("Enter the password :"));
+
+if (password === key1) {
+    alert("Password is correct");
+} else {
+
+    let key2 = Number(prompt("Incorrect! Try again:"));
+
+    if (password === key2) {
+        alert("Password is correct");
+    } else {
+
+        let key3 = Number(prompt("Incorrect! Last attempt:"));
+
+        if (password === key3) {
+            alert("Password is correct");
+        } else {
+            alert("System has been blocked");
+        }
+
+    }
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let password = 1234
+        // let key1 = Number(prompt("Enter the password :"))
+        // if(password == key1){
+        //     alert("password is correct")
+        // } else{
+        //     let key2 = Number(prompt("Incorrect try again :"))
+        //     if (password==key2){
+        //         alert("password is correct")
+        //     }else{
+        //         let key3 = Number(prompt("incorrect last attempt :"))
+
+        //         if (password=key3){
+        //             alert("password is correct")
+        //         }else{
+        //             alert("system has been blocked")
+        //         }
+        //     }
+        // }
+
+
+
+
+        let password=1234;
+        let attempt=0;
+
+        function lock() 
+        {
+            let user=Number(prompt("Enter the PIN : "));
+            if (user == password)
+            {
+                alert("Door Openned");
+            }
+            else if (user != password && attempt <= 2)
+            {
+                alert("Invalid password");
+            attempt++
+            lock()
+            }else{
+                alert("system blocked");
+                }
+            }
+        lock()
+    </script>
+</body>
+</html>
